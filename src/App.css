@@ -1,0 +1,172 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #10121b;
+  color: white;
+}
+
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 35px 20px;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+header h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+header h1 span {
+  color: #eab308;
+}
+
+header p {
+  color: #a1a1aa;
+}
+
+.search-form {
+  display: flex;
+  max-width: 650px;
+  margin: 0 auto 35px;
+  gap: 10px;
+}
+
+.search-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid #393b49;
+  border-radius: 8px;
+  background: #202331;
+  color: white;
+  font-size: 15px;
+}
+
+.search-form input::placeholder {
+  color: #a1a1aa;
+}
+
+.search-form button {
+  padding: 0 25px;
+  border: none;
+  border-radius: 8px;
+  background: #eab308;
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  text-align: center;
+  color: #eab308;
+  margin: 25px 0;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.movie-card {
+  overflow: hidden;
+  background: #202331;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-card img,
+.no-poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.no-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a1a1aa;
+  background: #303342;
+  text-align: center;
+}
+
+.movie-info {
+  padding: 15px;
+}
+
+.movie-info h2 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.movie-info p {
+  color: #a1a1aa;
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+footer {
+  text-align: center;
+  color: #a1a1aa;
+  margin-top: 55px;
+  padding: 20px;
+}
+
+footer small {
+  display: block;
+  margin-top: 8px;
+}
+
+@media (max-width: 850px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .movie-card img,
+  .no-poster {
+    height: 220px;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  .search-form button {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .movie-grid {
+    grid-template-columns: 1fr;
+  }
+}
